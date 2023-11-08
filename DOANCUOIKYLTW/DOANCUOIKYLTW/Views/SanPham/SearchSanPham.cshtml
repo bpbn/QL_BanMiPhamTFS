@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DOANCUOIKYLTW.Models.SANPHAM>
+
+@{
+    ViewBag.Title = "SearchSanPham";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h2>SearchSanPham</h2>
+<h2>@ViewBag.TB</h2>
+<div class="container" style="display:flex; flex-wrap:wrap; gap: 10px">
+
+@foreach (var item in Model)
+{
+    <div class="card" style="width: calc(100% / 3 - 30px)">
+        <img />
+        <div class="card-body">
+            <p class="card-text" style="overflow: hidden; max-height: 50px; text-align: center;">@item.TENSP</p>
+            <div style="display: flex; justify-content: space-between;">
+                <p class="card-text" style="overflow: hidden; max-height: 50px;">@item.GIABAN</p>
+                <p class="card-text" style="overflow: hidden; max-height: 50px;">@item.TONGDANHGIA</p>
+               
+            </div>
+            @Html.ActionLink("Thong tin chi tiet", "DetailSanPham", new { id = item.MASP }, new { @class = "alert-link" })
+        </div>
+    </div>
+
+
+}

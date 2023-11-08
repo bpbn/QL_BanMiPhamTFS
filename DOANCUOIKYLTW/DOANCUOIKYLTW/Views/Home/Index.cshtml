@@ -1,0 +1,607 @@
+﻿@*<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
+        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
+        is an ideal platform for building RESTful applications on the .NET Framework.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+    </div>
+</div>*@
+
+<!--<body>-->
+    <!--Quang Cao tai dau trang -->
+    @*<div id="header"></div>
+    <header>
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <div class="ads container-fluid">
+            <a class="ads" href="shop.html">
+                <p><strong>Giảm giá sốc lên đến 50% trong tháng 5. </strong> Kết thúc trong <span id="ads">0</span></p>
+            </a>
+        </div>
+    </header>*@
+
+
+
+    <!--Thanh Navigation - bao gồm side bar sử dụng cho màn hình nhỏ và navBar sử dụng cho màn hình desktop-->
+    @*<nav class="sticky-top">
+
+        <!--Sidebar when use for mobile with small screen-->
+        <div class="w3-beside-sidebar-right" onclick="w3_close()" style="display: none;"></div>
+        <div class="w3-sidebar-right w3-bar-block w3-border-right" style="display:none; right: 0;" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Đóng &times;</button>
+            <a href="shop.html" class="w3-bar-item w3-button">Nam</a>
+            <a href="shop.html" class="w3-bar-item w3-button">Nữ</a>
+            <div class="w3-dropdown-click">
+                <button class="w3-button" onclick="myDropFunc()">Thương hiệu <i class="fa fa-caret-down"></i></button>
+                <div id="demoDrop" class="w3-dropdown-content w3-bar-block w3-white w3-card">
+                    <a href="shop.html" class="w3-bar-item w3-button">Nikey</a>
+                    <a href="shop.html" class="w3-bar-item w3-button">Adidas</a>
+                    <a href="shop.html" class="w3-bar-item w3-button">Bitis</a>
+                    <a href="shop.html" class="w3-bar-item w3-button">FILA</a>
+                </div>
+            </div>
+            <a href="shop.html" class="w3-bar-item w3-button">Bán chạy</a>
+            <a href="signIn.html" class="w3-bar-item w3-button">Tài khoản</a>
+            <a href="#" class="w3-bar-item w3-button">Liên hệ</a>
+        </div>
+
+
+        <!--Navigation bar use for desktop-->
+        <div id="nav" class="nav">
+            <div class="logo col-md-2 col-lg-2 col-xxl-2">
+                <a href="index.html"><h1>VAT</h1></a>
+            </div>
+
+            <div id="myNavBar" class="main-navbar col-md-7 col-lg-7 col-xxl-6">
+                <a href="shop.html" class="myButton">Nam</a>
+                <a href="shop.html" class="myButton">Nữ</a>
+                <div class="w3-dropdown-hover">
+                    <a class="myButton">Thương hiệu <i class="fa fa-caret-down"></i></a>
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                        <a href="shop.html" class="w3-bar-item w3-button">Nike</a>
+                        <a href="shop.html" class="w3-bar-item w3-button">Adidas</a>
+                        <a href="shop.html" class="w3-bar-item w3-button">Bitis</a>
+                    </div>
+                </div>
+                <a href="shop.html" class="myButton">Bán chạy</a>
+                <a href="#" class="myButton">Liên hệ</a>
+            </div>
+
+
+
+            <div class="sub-navbar col-md-3 col-lg-3 col-xxl-4">
+                <img src="../main/icons/icons8-search-24.png" class="search-icon" style="width: 21px; height: 21px" alt="">
+                <input type="text" class="search-bar" name="q" required="">
+
+                <button class="w3-button w3-right w3-xlarge scroll-icon" onclick="w3_open()">&#9776;</button>
+                <div class="cart-icon"><a href="cart.html"><img src="../main/icons/icons8-cart-30.png" style="width: 30px; " alt=""></a></div>
+
+                <div class="user-icon"><a href="signIn.html"><img src="../main/icons/icons8-user-60.png" style="width: 30px; border: 2px solid black; border-radius: 50px;" alt=""></a></div>
+            </div>
+        </div>
+    </nav>*@
+
+
+
+
+<script>
+    let multipleCardCarousel = document.querySelector(".for-mens #carouselExampleControls");
+
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+            interval: false,
+        });
+
+        let carouselWidth = $(".for-mens .carousel-inner")[0].scrollWidth;
+        let cardWidth = $(".for-mens .carousel-item").width();
+        let scrollPosition = 0;
+        $(".for-mens #carouselExampleControls .carousel-control-next").on("click", function () {
+            if (scrollPosition < carouselWidth - cardWidth * 4) {
+                scrollPosition += cardWidth;
+                $(".for-mens #carouselExampleControls .carousel-inner").animate({ scrollLeft: scrollPosition }, 600);
+            }
+        });
+        $(".for-mens #carouselExampleControls .carousel-control-prev").on("click", function () {
+            if (scrollPosition > 0) {
+                scrollPosition -= cardWidth;
+                $(".for-mens #carouselExampleControls .carousel-inner").animate(
+                  { scrollLeft: scrollPosition },
+                  600
+                );
+            }
+        });
+    } else {
+        $(multipleCardCarousel).addClass(" slide");
+    }
+</script>
+
+    <!--________________________Content____________________________________________________-->
+    <!--Carousel - Su dung cua boostrap-->
+
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="Images/slideshow.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="Images/slideshow(1).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="Images/slideshow(2).jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!--Heroes with carousel using bootstrap5-->
+    <div class="container col-xxl-8 ">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <!--			Carousel -->
+            <div class="col-12 col-md-12 col-lg-6">
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/slideshow0.jpg" class="d-block w-100 " alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/slideshow1.jpg" class="d-block w-100 " alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/homePage.PNG" class="d-block w-100 " alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/slideshow4.jpg" class="d-block w-100 " alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/slideshow2.jpg" class="d-block w-100 " alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/slideshow3.jpg" class="d-block w-100 " alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!--			Description-->
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"> VAT Sneaker web store</h1>
+                <p class="lead">
+                    Được thực hiện bởi team VAT(Vũ - Anh - Tuyền) <br>
+                    Nhóm 3 <br> Lớp: Thiết kế web, thứ tư tiết 1 - 5 <br> GV: Nguyễn Hải Yến <br>
+                    Trang web bao gồm: Trang chủ - Trang đăng ký - Trang danh sách các sản phẩm - Trang chi tiết một sản phẩm - Trang giỏ hàng<br>
+                </p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4 me-md-2" style="border-radius: 0px; ">About VAT Team</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Carousel with card and some custome using jQuery-->
+    <!-- Product for mens -  using bootstrap carousel + card + some custom using jQuery-->
+    <hr style="width: 80%; border: solid 1px gray;" class="m-auto mt-5">
+
+
+    <h1 align="center" style="font-size: 48px; font-weight: 600;">TOP SALES</h1>
+    <div class="for-mens">
+        <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="product.html" class="mya">
+                        <div class="card">
+                            <div class="img-wrapper"><img src="images/products/white_w27445_giay_sneaker_cole_haan__3__634d619fe3ac4a1c96c1d58dcd290cd9_large (1).png" class="d-block mw-426 mh-100" alt="..."> </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GENERATION ZERØGRAND II SQL</h5>
+                                <p class="card-text">5.390.000₫</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <hr style="width: 100%; border: solid 1px gray;" class="m-auto mt-5">
+
+
+
+
+    <div class="video container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"> <i>Chuyên cung cấp các mẫu giày mới và thời thượng</i></h1>
+                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Chi tiết</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Theo dõi</button>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <video class="w-100" src="video/Nike Jordan 1 Chicago _ Cinematic Shoe Commercial _ Nepal.mp4" autoplay controls></video>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!--Chân trang: gồm hai phần chính "informations" và "end"
+        informations: gồm connect, contact, chinhSach, dẫn lên đầu trang.
+        end: chân trang
+    -->
+    <footer>
+        <!--____________________________Informations______________________________________________________-->
+        <div class="information container auto;" style="min-width: 85%;">
+            <!--Connect và contact-->
+            <section class="section1">
+                <div class="row">
+                    <!--Connect-->
+                    <div class="connect col-12 col-md-6 col-sm-12">
+                        <h2 class="text-bold">Kết nối</h2>
+                        <p>
+                            Nhập email để đăng ký nhận thông tin mới nhất về sản phẩm, sự kiện và ưu đãi độc quyền của VAT Sneaker
+                        </p>
+
+                        <div>
+                            <form accept-charset="UTF-8" action="" class="contact-form" method="post">
+                                <input style="width: 100%; border: none; background-color: #C5D3D9; border-bottom: 1px solid black;" required="" type="email" name="" aria-label="Email Address" placeholder="Nhập email của bạn">
+                                <button style="border: none; background-color: #C5D3D9; font-weight: 700; margin-left: -3px; " type="submit" value="Đăng ký">
+                                    Đăng ký
+                                </button>
+                            </form>
+                        </div>
+                        <div class="social-contact">
+                            <a href="" title="Facebook" target="_blank">
+                                <img src="icons/icons8-facebook-50.png" alt="facebook-icon">
+                            </a>
+                            <a href="" title="Instagram" target="_blank">
+                                <img src="icons/icons8-instagram-50.png" alt="instagram-icon">
+                            </a>
+                            <a href="" title="Tiktok" target="_blank">
+                                <img src="icons/icons8-tiktok-50.png" alt="tiktok-icon">
+                            </a>
+                        </div>
+                        <div class="center">
+                            <a href="" target="_blank" class="center">
+                                <img src="images/boCongThuong.png" alt="bo cong thuong" style="width: 200px; margin: 0 auto;">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--_______________________Contact________________________________-->
+                    <div class="contact col-12 col-md-6 col-sm-12">
+                        <h2 class="text-bold">Thông tin liên hệ</h2>
+                        <p>
+                            <br>
+                            Công ty Cổ phần VAT
+                            <br>Địa chỉ: 429/32 Nguyễn Trãi, Bến Thành, quận 1, TPHCM
+                            <br>Số ĐKKD 0304198785 do Sở Kế hoạch đầu tư TP HCM cấp ngày 09/02/2023
+                        </p>
+                        <div class="info-contact">
+                            <div>
+                                <pre><img src="icons/icons8-phone-50.png" alt="icon-phones" style="width: 30px;"> (028) 39 255 200</pre>
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="info-contact">
+                            <div>
+                                <pre href="mailto:colehaancare@tbsretail.vn"><img src="icons/icons8-mail-50.png" alt="icon-email" style="width: 30px;"> sneaker@vatretail.vn</pre>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="info-contact">
+                            <div>
+                                <span><img src="icons/icons8-calendar-50.png" alt="icon-calendar" style="width: 30px;"> Thứ 2 - thứ 6 hàng tuần, 8.30 giờ sáng – 5.30 giờ chiều</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!----------------------Chính sách--------------------------->
+            <section class="section2">
+                <div class="row center">
+                    <div class="col-12 col-md-4 col-sm-12">
+                        <h5 class="text-bold" data-toggle-title="">Chính sách khách hàng</h5>
+                        <ul class="myl">
+                            <li><a href="" class="mya">Hướng dẫn đặt hàng</a></li>
+                            <li><a href="" class="mya">Chính sách bảo hành</a></li>
+                            <li><a href="" class="mya">Chính sách đổi hàng</a></li>
+                            <li><a href="" class="mya">Phương thức thanh toán</a></li>
+                            <li><a href="" class="mya">Kiểm tra đơn hàng</a></li>
+                            <li><a href="" class="mya">Chương trình khách hàng VIP</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4 col-sm-12">
+                        <h5 class="text-bold l mya">Giới thiệu</h5>
+                        <ul class="myl">
+                            <li><a href="" class="mya">Về VAT</a></li>
+                            <li><a href="" class="mya">Tìm cửa hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4 col-sm-12">
+                        <h5 class="text-bold myl mya">Nhà phân phối</h5>
+                        <ul class="myl">
+                            <li><a href="" class="mya">Về TBS Retail</a></li>
+                            <li><a href="" class="mya">Tuyển dụng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!--Dẫn lên đầu trang-->
+            <section class="section3">
+                <br>
+                <ul class="myl mylmenu center">
+                    <li><a href="" class="mya">Chính sách bảo mật</a></li>|
+                    <li><a href="" class="mya">Điều khoản sử dụng</a></li>|
+                    <li><a href="" class="mya">Tìm cửa hàng</a></li>
+                </ul>
+                <br>
+                <div class="copyright">
+                    © <span class="yearnow">2023</span> VAT Sneaker team
+                </div>
+                <br>
+                <div class="back-to-top">
+                    <a href="#header" class="mya">
+                        <img src="icons/icons8-top-50.png" title="Make your way to the top" alt="Make your way to the top" style="width: 100px;">
+                    </a>
+                    <br>
+                    <br>
+                    <a href="#header" class="mya">
+                        Trở về đầu trang
+                    </a>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+        <!--Chân trang___________________________________________________-->
+        <div class="end container-fluid">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 text-left flex-center">
+                    <ul class="row">
+                        <li class="col-3">
+                            <a href="#" class="mya" title="Về TBS Retail">
+                                Về VATRetail
+                            </a>
+                        </li>
+
+                        <li class="col-3">
+                            <a href="#" class="mya" title="Tuyển dụng">
+                                Tuyển dụng
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 text-right flex-center" style="justify-content: flex-end;">
+                    <p style="color:white; margin-left: 30px;: ">Copyright © 2023 - 2023 VATRetail - một thành viên của VATGroup | <br>All right reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--	script for carousel with multiple items custome with jQuery-->
+    <script>
+        let multipleCardCarousel = document.querySelector(".for-mens #carouselExampleControls");
+
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+                interval: false,
+            });
+
+            let carouselWidth = $(".for-mens .carousel-inner")[0].scrollWidth;
+            let cardWidth = $(".for-mens .carousel-item").width();
+            let scrollPosition = 0;
+            $(".for-mens #carouselExampleControls .carousel-control-next").on("click", function () {
+                if (scrollPosition < carouselWidth - cardWidth * 4) {
+                    scrollPosition += cardWidth;
+                    $(".for-mens #carouselExampleControls .carousel-inner").animate({ scrollLeft: scrollPosition }, 600);
+                }
+            });
+            $(".for-mens #carouselExampleControls .carousel-control-prev").on("click", function () {
+                if (scrollPosition > 0) {
+                    scrollPosition -= cardWidth;
+                    $(".for-mens #carouselExampleControls .carousel-inner").animate(
+                      { scrollLeft: scrollPosition },
+                      600
+                    );
+                }
+            });
+        } else {
+            $(multipleCardCarousel).addClass(" slide");
+        }
+    </script>
+
+
+    <script>
+
+    </script>
+<!--</body>-->

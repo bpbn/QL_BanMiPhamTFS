@@ -1,0 +1,23 @@
+﻿@model DOANCUOIKYLTW.Models.SANPHAM
+
+@{
+    ViewBag.Title = "DetailSanPham";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h2>DetailSanPham</h2>
+
+<div class="container">
+    <div class="row">
+        @*<div class="col-md-6">
+            <img src="@Model.ANHDAIDIEN" alt="@item.TENSP" class="img-fluid" />
+        </div>*@
+        <div class="col-md-6">
+            <h1>@Model.TENSP</h1>
+            @*<p>@Model.MOTA</p>*@
+            <p>Giá bán: @Model.GIABAN</p>
+            <p>Tổng đánh giá: @Model.TONGDANHGIA</p>
+            <p>Đánh giá: @ViewBag.Comment</p>
+        </div>
+    </div>
+</div>
